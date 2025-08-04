@@ -193,10 +193,20 @@ body {
 #greek-texts-section .container,
 #civ-topics-section .container,
 #civ-resources-section .container {
-    display: block;
-    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 20px;
+}
+
+#greek-vocab-section .container > div,
+#greek-texts-section .container > div,
+#civ-topics-section .container > div,
+#civ-resources-section .container > div {
+    width: 100%;
+    max-width: 600px;
 }
 
 /* QUIZ AREA */
