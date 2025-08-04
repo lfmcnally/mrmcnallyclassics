@@ -188,6 +188,17 @@ body {
     padding: 2rem 20px;
 }
 
+/* Center content when no sidebar is present */
+#greek-vocab-section .container,
+#greek-texts-section .container,
+#civ-topics-section .container,
+#civ-resources-section .container {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+}
+
 /* QUIZ AREA */
 .quiz-area {
     background: white;
