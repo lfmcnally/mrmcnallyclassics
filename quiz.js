@@ -22,7 +22,7 @@ const chapterInfo = {
 
 // Update test options when chapter changes
 function updateTestOptions() {
-    selectedChapter = document.getElementById('chapter-select').value;
+    selectedChapter = document.querySelector('input[name="chapter-select"]:checked').value;
     
     // Get words for selected chapter
     const availableWords = getWordsForChapter(selectedChapter);
@@ -158,6 +158,11 @@ function showCompletion() {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize chapter selection
     updateTestOptions();
+    
+    // Chapter selection change
+    document.querySelectorAll('input[name="chapter-select"]').forEach(radio => {
+        radio.addEventListener('change', updateTestOptions);
+    });
     
     // Test length change
     document.querySelectorAll('input[name="test-length"]').forEach(radio => {
