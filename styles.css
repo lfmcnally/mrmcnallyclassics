@@ -44,15 +44,16 @@ body {
 }
 
 .author {
-    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
     margin: 0;
     font-size: 0.9rem;
     font-weight: 300;
     letter-spacing: -0.5px;
     margin-top: -0.8rem;
+    margin-bottom: -0.8rem;
     line-height: 1;
 }
 
@@ -63,7 +64,6 @@ body {
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-top: -0.3rem;
 }
 
 /* Navigation Container */
