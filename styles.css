@@ -94,23 +94,23 @@ body {
 
 /* Latin Navigation (Blue) */
 .nav-latin {
-    background: rgba(0, 123, 255, 0.1);
-    border-color: rgba(0, 123, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.15);
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.8) 0%, rgba(0, 86, 179, 0.9) 100%);
+    border-color: rgba(0, 123, 255, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
 }
 
 /* Greek Navigation (Green) */
 .nav-greek {
-    background: rgba(40, 167, 69, 0.1);
-    border-color: rgba(40, 167, 69, 0.2);
-    box-shadow: 0 4px 20px rgba(40, 167, 69, 0.15);
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.8) 0%, rgba(32, 134, 55, 0.9) 100%);
+    border-color: rgba(40, 167, 69, 0.4);
+    box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3);
 }
 
 /* Classical Civilisation Navigation (Red) */
 .nav-civ {
-    background: rgba(220, 53, 69, 0.1);
-    border-color: rgba(220, 53, 69, 0.2);
-    box-shadow: 0 4px 20px rgba(220, 53, 69, 0.15);
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.8) 0%, rgba(200, 35, 51, 0.9) 100%);
+    border-color: rgba(220, 53, 69, 0.4);
+    box-shadow: 0 4px 20px rgba(220, 53, 69, 0.3);
 }
 
 .nav-item {
@@ -120,7 +120,7 @@ body {
     cursor: pointer;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #6c757d;
+    color: white;
     border-radius: 25px;
     transition: all 0.3s ease;
     position: relative;
@@ -131,43 +131,43 @@ body {
 }
 
 .nav-item:hover {
-    color: #495057;
+    color: white;
     transform: translateY(-1px);
 }
 
 /* Latin nav item hover and active */
 .nav-latin .nav-item:hover {
-    background: rgba(0, 123, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .nav-latin .nav-item.active {
-    background: #007bff;
+    background: rgba(255, 255, 255, 0.25);
     color: white;
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transform: translateY(-1px);
 }
 
 /* Greek nav item hover and active */
 .nav-greek .nav-item:hover {
-    background: rgba(40, 167, 69, 0.1);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .nav-greek .nav-item.active {
-    background: #28a745;
+    background: rgba(255, 255, 255, 0.25);
     color: white;
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transform: translateY(-1px);
 }
 
 /* Classical Civilisation nav item hover and active */
 .nav-civ .nav-item:hover {
-    background: rgba(220, 53, 69, 0.1);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .nav-civ .nav-item.active {
-    background: #dc3545;
+    background: rgba(255, 255, 255, 0.25);
     color: white;
-    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transform: translateY(-1px);
 }
 
