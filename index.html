@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr McNally's Classics - OCR GCSE Latin Vocab Tester</title>
+    <title>Classicalia - All things Classics, in one place</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -264,13 +264,32 @@
     }
 
     function checkAnswer() {
-        const userAnswer = document.getElementById('answer-input').value.trim().toLowerCase();
+        const userAnswer = document.getElementById('answer-input').value.trim();
+        
+        // Check if answer is empty
+        if (!userAnswer) {
+            alert('Please enter an answer first!');
+            return;
+        }
+        
         const word = currentTestWords[currentQuestionIndex];
         const correctAnswer = word.english.toLowerCase();
+        const userAnswerLower = userAnswer.toLowerCase();
         
         const feedback = document.getElementById('feedback');
         
-        if (userAnswer === correctAnswer || correctAnswer.includes(userAnswer)) {
+        // Check for exact match or any of the comma-separated alternatives
+        const correctParts = correctAnswer.split(',').map(p => p.trim());
+        let isCorrect = false;
+        
+        for (const correctPart of correctParts) {
+            if (userAnswerLower === correctPart) {
+                isCorrect = true;
+                break;
+            }
+        }
+        
+        if (isCorrect) {
             feedback.innerHTML = `<strong>Correct!</strong> ✓<br><small>"${word.latin}" = "${word.english}"</small>`;
             feedback.className = 'feedback feedback-correct';
             score++;
