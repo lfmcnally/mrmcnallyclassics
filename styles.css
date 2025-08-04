@@ -258,20 +258,26 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.chapter-selection select {
-    width: 100%;
+.chapter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.chapter-options .option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.5rem;
-    border: 2px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    background: white;
+}
+
+.chapter-options input[type="radio"] {
     cursor: pointer;
 }
 
-.chapter-selection select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+.chapter-options label {
+    cursor: pointer;
+    font-size: 0.9rem;
 }
 
 .quiz-length-options {
