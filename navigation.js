@@ -3,14 +3,20 @@ function showSection(section) {
     // Hide all sections
     document.getElementById('vocab-section').classList.add('hidden');
     document.getElementById('texts-section').classList.add('hidden');
+    document.getElementById('greek-vocab-section').classList.add('hidden');
+    document.getElementById('greek-texts-section').classList.add('hidden');
+    document.getElementById('civ-topics-section').classList.add('hidden');
+    document.getElementById('civ-resources-section').classList.add('hidden');
     
     // Show selected section
     document.getElementById(section + '-section').classList.remove('hidden');
     
-    // Update nav active state
+    // Update nav active state - remove active from all nav items
     document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.remove('active');
     });
+    
+    // Add active to the clicked nav item
     event.target.classList.add('active');
 }
 
