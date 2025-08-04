@@ -94,31 +94,31 @@ body {
 
 /* Latin Navigation (Blue) */
 .nav-latin {
-    background: linear-gradient(135deg, rgba(0, 123, 255, 0.8) 0%, rgba(0, 86, 179, 0.9) 100%);
-    border-color: rgba(0, 123, 255, 0.4);
-    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.8) 0%, rgba(0, 86, 179, 0.9) 100%) !important;
+    border-color: rgba(0, 123, 255, 0.4) !important;
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3) !important;
 }
 
 /* Greek Navigation (Green) */
 .nav-greek {
-    background: linear-gradient(135deg, rgba(40, 167, 69, 0.8) 0%, rgba(32, 134, 55, 0.9) 100%);
-    border-color: rgba(40, 167, 69, 0.4);
-    box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3);
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.8) 0%, rgba(32, 134, 55, 0.9) 100%) !important;
+    border-color: rgba(40, 167, 69, 0.4) !important;
+    box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3) !important;
 }
 
 /* Classical Civilisation Navigation (Red) */
 .nav-civ {
-    background: linear-gradient(135deg, rgba(220, 53, 69, 0.8) 0%, rgba(200, 35, 51, 0.9) 100%);
-    border-color: rgba(220, 53, 69, 0.4);
-    box-shadow: 0 4px 20px rgba(220, 53, 69, 0.3);
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.8) 0%, rgba(200, 35, 51, 0.9) 100%) !important;
+    border-color: rgba(220, 53, 69, 0.4) !important;
+    box-shadow: 0 4px 20px rgba(220, 53, 69, 0.3) !important;
 }
 
 .nav-item {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     background: transparent;
     border: none;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: white;
     border-radius: 25px;
@@ -128,6 +128,7 @@ body {
     flex: 1;
     text-align: center;
     white-space: nowrap;
+    min-width: 0;
 }
 
 .nav-item:hover {
