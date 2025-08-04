@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classicalia - All things Classics, in one place</title>
+    <title>\Classicalia</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,8 +12,8 @@
 
     <header class="header">
         <div class="header-content">
-            <div class="logo">Mr McNally's Classics</div>
-            <div class="subtitle">OCR GCSE Latin Resources</div>
+            <div class="logo">Classicalia</div>
+            <div class="subtitle">All things Classics, in one place</div>
             <nav class="nav">
                 <button class="nav-item active" onclick="showSection('vocab')">Vocabulary Tester</button>
                 <button class="nav-item" onclick="showSection('texts')">Set Texts</button>
@@ -278,15 +278,30 @@
         
         const feedback = document.getElementById('feedback');
         
-        // Check for exact match or any of the comma-separated alternatives
+        // Split correct answer by commas to handle multiple acceptable answers
         const correctParts = correctAnswer.split(',').map(p => p.trim());
         let isCorrect = false;
         
         for (const correctPart of correctParts) {
+            // Split each part by spaces to get individual words
+            const correctWords = correctPart.split(/\s+/);
+            const userWords = userAnswerLower.split(/\s+/);
+            
+            // Check if user answer exactly matches any correct part
             if (userAnswerLower === correctPart) {
                 isCorrect = true;
                 break;
             }
+            
+            // Check if user answer matches any individual word in the correct answer
+            for (const correctWord of correctWords) {
+                if (userWords.includes(correctWord)) {
+                    isCorrect = true;
+                    break;
+                }
+            }
+            
+            if (isCorrect) break;
         }
         
         if (isCorrect) {
