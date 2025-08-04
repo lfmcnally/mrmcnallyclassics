@@ -254,67 +254,64 @@ body {
     margin-top: 0;
 }
 
-.chapter-selection {
+.setting-group {
     margin-bottom: 1.5rem;
 }
 
-.chapter-options {
-    display: flex;
-    flex-direction: column;
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
 }
 
-.chapter-options .option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-}
-
-.chapter-options input[type="radio"] {
-    cursor: pointer;
-}
-
-.chapter-options label {
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.quiz-length-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.option {
+.chapter-option {
     display: flex;
     align-items: center;
+    gap: 0.25rem;
+}
+
+.chapter-option input[type="radio"] {
+    cursor: pointer;
+    margin: 0;
+}
+
+.chapter-option label {
+    cursor: pointer;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.length-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
-    padding: 0.5rem;
 }
 
-.option input[type="radio"] {
-    cursor: pointer;
+.length-options .option {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
 }
 
-.option label {
+.length-options input[type="radio"] {
     cursor: pointer;
-    font-size: 0.9rem;
+    margin: 0;
+}
+
+.length-options label {
+    cursor: pointer;
+    font-size: 0.85rem;
 }
 
 .chapter-info {
     border-top: 1px solid #e9ecef;
     padding-top: 1rem;
-}
-
-.chapter-info h4 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }
 
 #chapter-details {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #6c757d;
     line-height: 1.4;
 }
