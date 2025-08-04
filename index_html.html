@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr McNally's Classics - OCR GCSE Latin Vocab Tester</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Global Info Button -->
+    <button onclick="showInfoModal()" class="global-info-btn">ℹ️</button>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Mr McNally's Classics</div>
+            <div class="subtitle">OCR GCSE Latin Resources</div>
+            <nav class="nav">
+                <button class="nav-item active" onclick="showSection('vocab')">Vocabulary Tester</button>
+                <button class="nav-item" onclick="showSection('texts')">Set Texts</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Vocabulary Tester Section -->
+        <div id="vocab-section">
+            <div class="main-content">
+                <!-- Latin Word Display -->
+                <div class="word-display">
+                    <div class="latin-word" id="latin-word">aqua</div>
+                    <div class="word-info" id="word-info">aquae, f - noun 1</div>
+                </div>
+
+                <!-- Answer Input -->
+                <div class="answer-section">
+                    <input type="text" class="form-control" id="answer-input" placeholder="Enter the English meaning..." autocomplete="off">
+                    
+                    <div class="btn-group">
+                        <button class="btn" onclick="checkAnswer()" id="check-btn">Check Answer</button>
+                        <button class="btn btn-secondary hidden" onclick="nextQuestion()" id="next-btn">Next Word</button>
+                        <button class="btn btn-warning" onclick="revealAnswer()" id="reveal-btn">Reveal Answer</button>
+                    </div>
+                    
+                    <div id="feedback" class="feedback"></div>
+                </div>
+
+                <!-- Progress Section -->
+                <div class="progress-section">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    
+                    <div>Question <span id="current-question">1</span> of <span id="total-questions">10</span></div>
+                    
+                    <div class="stats">
+                        <div>Score: <span id="score">0</span>/<span id="answered">0</span> (<span id="percentage">0</span>%)</div>
+                        <div id="completion-message" class="hidden" style="margin-top: 1rem; padding: 1rem; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;">
+                            <strong>Test Complete!</strong><br>
+                            <span id="final-message"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h3>Test Settings</h3>
+                
+                <div class="quiz-length-options">
+                    <div class="option">
+                        <input type="radio" name="test-length" value="10" id="test-10" checked>
+                        <label for="test-10">10 questions</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="test-length" value="25" id="test-25">
+                        <label for="test-25">25 questions</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="test-length" value="50" id="test-50">
+                        <label for="test-50">50 questions</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="test-length" value="all" id="test-all">
+                        <label for="test-all">Whole set (50 words)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Set Texts Section -->
+        <div id="texts-section" class="hidden">
+            <div style="grid-column: 1 / -1;">
+                <h2 style="margin-bottom: 2rem; color: #495057;">OCR GCSE Set Texts</h2>
+                
+                <div class="text-list">
+                    <div class="text-card active" onclick="selectText('messalina')">
+                        <h3>Messalina</h3>
+                        <p>Tacitus, Annals XI.26-38 - The story of Messalina's downfall and execution</p>
+                    </div>
+                    <div class="text-card" onclick="selectText('future')" style="opacity: 0.6;">
+                        <h3>Coming Soon</h3>
+                        <p>Additional set texts will be added here</p>
+                    </div>
+                </div>
+
+                <div class="video-section">
+                    <div id="messalina-videos">
+                        <h3 style="margin-bottom: 2rem; color: #495057;">Messalina Video Tutorials</h3>
+                        
+                        <div class="video-list">
+                            <div class="video-item">
+                                <div class="video-title">1. Introduction to Messalina</div>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/7ZlSWwnVIaE" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="video-item">
+                                <div class="video-title">2. Historical Context</div>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/l56H6L2UA9U" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="future-videos" class="hidden">
+                        <h3 style="color: #495057;">More Set Texts Coming Soon</h3>
+                        <p style="color: #6c757d;">Additional set text resources will be added here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeInfoModal()">&times;</span>
+            <div style="display: flex; gap: 1rem; align-items: flex-start; margin-top: 1rem;">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23495057'/%3E%3Ctext x='50' y='60' text-anchor='middle' fill='white' font-size='40' font-family='Arial, sans-serif'%3EMcN%3C/text%3E%3C/svg%3E" style="width: 80px; height: 80px; border-radius: 50%; flex-shrink: 0;">
+                <div>
+                    <p><strong>salve!</strong></p>
+                    <p>I'm Lawrence and I teach Latin and Classics in Bristol.</p>
+                    <p>I have a BA in Ancient History from King's College London, a PGCE in Latin with Classics from the University of Cambridge and an MEd (Transforming Practice) from Darwin College, Cambridge. I am particularly interested in Tacitean studies and the history of memory in classical antiquity. In 2021 I won the Classical Association's 'Outstanding New Teacher' award. I also enjoy creating teacher guides and student workbooks. Please feel free to use my resources!</p>
+                    <p>You can get in touch with me via <strong>Twitter</strong> if you have any questions - I'm more than happy to help.</p>
+                    <p>If you'd like to support me making free and accessible resources, you can buy me a <strong>coffee</strong>. Thanks!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="data/vocabulary-data.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
