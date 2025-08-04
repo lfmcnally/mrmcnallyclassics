@@ -66,7 +66,27 @@
             <div class="sidebar">
                 <h3>Test Settings</h3>
                 
+                <!-- Chapter Selection -->
+                <div class="chapter-selection">
+                    <h4>Test by Chapter</h4>
+                    <select id="chapter-select" onchange="updateTestOptions()">
+                        <option value="all">All chapters (mixed)</option>
+                        <option value="1">Chapter 1 - Basics</option>
+                        <option value="2">Chapter 2 - Home & Family</option>
+                        <option value="3">Chapter 3 - Town & Country</option>
+                        <option value="4">Chapter 4 - People & Places</option>
+                        <option value="5">Chapter 5 - Time & Movement</option>
+                        <option value="6">Chapter 6 - Actions & Events</option>
+                        <option value="7">Chapter 7 - Comparisons & Qualities</option>
+                        <option value="8">Chapter 8 - Complex Ideas</option>
+                        <option value="9">Chapter 9 - Advanced Concepts</option>
+                        <option value="10">Chapter 10 - Final Topics</option>
+                    </select>
+                </div>
+
+                <!-- Test Length Options -->
                 <div class="quiz-length-options">
+                    <h4>Test Length</h4>
                     <div class="option">
                         <input type="radio" name="test-length" value="10" id="test-10" checked>
                         <label for="test-10">10 questions</label>
@@ -81,8 +101,14 @@
                     </div>
                     <div class="option">
                         <input type="radio" name="test-length" value="all" id="test-all">
-                        <label for="test-all">Whole set (50 words)</label>
+                        <label for="test-all">All available words</label>
                     </div>
+                </div>
+
+                <!-- Chapter Info -->
+                <div id="chapter-info" class="chapter-info hidden">
+                    <h4>Chapter Content</h4>
+                    <div id="chapter-details"></div>
                 </div>
             </div>
         </div>
@@ -109,14 +135,14 @@
                         
                         <div class="video-list">
                             <div class="video-item">
-                                <div class="video-title">1. Silius is forced to have an affair with Messalina</div>
+                                <div class="video-title">1. Introduction to Messalina</div>
                                 <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/7ZlSWwnVIaE" allowfullscreen></iframe>
                                 </div>
                             </div>
                             
                             <div class="video-item">
-                                <div class="video-title">2. Messalina's visits to Silius become increasingly more frequent</div>
+                                <div class="video-title">2. Historical Context</div>
                                 <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/l56H6L2UA9U" allowfullscreen></iframe>
                                 </div>
@@ -140,7 +166,7 @@
             <div style="display: flex; gap: 1rem; align-items: flex-start; margin-top: 1rem;">
                 <img src="images/lmc.jpg" style="width: 120px; height: 120px; border-radius: 50%; flex-shrink: 0; object-fit: cover;" alt="Lawrence McNally">
                 <div>
-                   <p><strong>salve!</strong> 👋</p>
+                    <p><strong>salve!</strong> 👋</p>
                     <p>I'm Lawrence and I teach Latin and Classics in Bristol.</p>
                     <p>I have a BA in Ancient History from King's College London, a PGCE in Latin with Classics from the University of Cambridge and an MEd (Transforming Practice) from Darwin College, Cambridge. I am particularly interested in Tacitean studies and the history of memory in classical antiquity. In 2021 I won the Classical Association's 'Outstanding New Teacher' award. I also enjoy creating teacher guides and student workbooks. Please feel free to use my resources!</p>
                     <p>You can get in touch with me via <strong>Twitter</strong> if you have any questions - I'm more than happy to help.</p>
