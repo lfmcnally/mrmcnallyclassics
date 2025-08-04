@@ -25,7 +25,19 @@ function loadQuestion() {
     document.getElementById('latin-word').textContent = word.latin;
     document.getElementById('word-info').textContent = word.info;
     document.getElementById('answer-input').value = '';
-    document.getElementById('feedback').innerHTML = '';
+    
+    // Clear feedback and reset to default styling
+    const feedback = document.getElementById('feedback');
+    feedback.innerHTML = '';
+    feedback.className = 'feedback'; // Reset to default class
+    
+    // Reset buttons
+    document.getElementById('check-btn').classList.remove('hidden');
+    document.getElementById('next-btn').classList.add('hidden');
+    document.getElementById('reveal-btn').classList.remove('hidden');
+    
+    // Focus on input
+    document.getElementById('answer-input').focus();
 }
 
 function checkAnswer() {
@@ -47,14 +59,18 @@ function checkAnswer() {
     questionsAnswered++;
     document.getElementById('check-btn').classList.add('hidden');
     document.getElementById('next-btn').classList.remove('hidden');
+    document.getElementById('reveal-btn').classList.add('hidden');
 }
 
 function nextQuestion() {
     currentQuestionIndex++;
     if (currentQuestionIndex < currentTestWords.length) {
         loadQuestion();
-        document.getElementById('check-btn').classList.remove('hidden');
-        document.getElementById('next-btn').classList.add('hidden');
+    } else {
+        // Test complete
+        const feedback = document.getElementById('feedback');
+        feedback.innerHTML = `<strong>Test Complete!</strong><br>Score: ${score}/${currentTestWords.length}`;
+        feedback.className = 'feedback feedback-correct';
     }
 }
 
@@ -63,8 +79,26 @@ function revealAnswer() {
     const feedback = document.getElementById('feedback');
     feedback.innerHTML = `<strong>Answer:</strong> ${word.english}`;
     feedback.className = 'feedback feedback-revealed';
+    
+    document.getElementById('check-btn').classList.add('hidden');
+    document.getElementById('next-btn').classList.remove('hidden');
+    document.getElementById('reveal-btn').classList.add('hidden');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     createNewTest();
+    
+    // Add Enter key support
+    document.getElementById('answer-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const checkBtn = document.getElementById('check-btn');
+            const nextBtn = document.getElementById('next-btn');
+            
+            if (!checkBtn.classList.contains('hidden')) {
+                checkAnswer();
+            } else if (!nextBtn.classList.contains('hidden')) {
+                nextQuestion();
+            }
+        }
+    });
 });
